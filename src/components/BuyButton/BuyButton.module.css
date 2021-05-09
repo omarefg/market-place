@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.root:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+.badgeContainer {
+  position: relative;
+  margin-right: 16px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color:skyblue;
+  color: #282c34;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
