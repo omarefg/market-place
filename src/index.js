@@ -1,11 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
-import "./index.css";
 import { Home } from "./pages";
+import withFeedback from "domains/feedback";
+import "./index.css";
+
+const DecoratedComponent = withFeedback(Home)
 
 render(
   <React.StrictMode>
-    <Home/>
+    <DecoratedComponent/>
   </React.StrictMode>,
   document.getElementById("root")
 );

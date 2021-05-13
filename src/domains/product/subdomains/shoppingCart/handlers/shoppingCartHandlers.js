@@ -1,6 +1,6 @@
 function handleBuyClickBuilder(params) {
   const {
-    stateSetters: { setLoaders, setErrorInBuy, setCart },
+    stateSetters: { setLoaders, setErrors, setCart },
     useCases: { postBuy },
     domains: {
       feedback: {
@@ -10,18 +10,19 @@ function handleBuyClickBuilder(params) {
       },
     },
     loadersKeys,
+    errorsKeys
   } = params;
 
   return function handleBuyClick() {
     setLoaders((prevState) => ({ ...prevState, [loadersKeys.postBuy]: true }));
-    setErrorInBuy(null);
+    setErrors((prevState) => ({ ...prevState, [errorsKeys.postBuy]: null }));
     postBuy()
     .then((res) => {
       handleSetTextModalMessage(res)
       setCart([]);
     })
     .catch((error) => {
-        setErrorInBuy(error);
+      setErrors((prevState) => ({ ...prevState, [errorsKeys.postBuy]: error }));
       })
       .finally(() => {
         setLoaders((prevState) => ({

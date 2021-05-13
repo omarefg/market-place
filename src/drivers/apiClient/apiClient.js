@@ -1,7 +1,7 @@
 export default function apiClientBuilder(client) {
   return {
-    get(args) {
-      return client.get(...args).then((res) => res.json());
+    get(...args) {
+      return client(...args).then((res) => res.json())
     },
     postBuy() {
       const failOrSuccess = Math.round(Math.random());
