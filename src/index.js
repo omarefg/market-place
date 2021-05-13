@@ -5,7 +5,7 @@ import { Home } from "./pages";
 
 render(
   <React.StrictMode>
-    <Home />
+    <Home/>
   </React.StrictMode>,
   document.getElementById("root")
 );

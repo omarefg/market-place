@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  },
+  "typeAcquisition": {
+    "exclude": [
+      "dotenv",
+      "harmony-reflect",
+      "source-map",
+      "tsconfig-paths"
+    ]
+  }
+}
