@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function withDomainBuilder(params) {
   const {
     utils: {
@@ -10,7 +12,7 @@ export function withDomainBuilder(params) {
     useCases,
     handlersBuilder,
     useContext,
-    components
+    components,
   } = params;
 
   return function withDomain(Component) {
@@ -24,7 +26,7 @@ export function withDomainBuilder(params) {
         useCases,
         handlersBuilder,
         components,
-        higherProps: props
+        higherProps: props,
       };
 
       return (

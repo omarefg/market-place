@@ -56,9 +56,7 @@ export default function Home(props) {
         <RickAndMortyList
           feedbackComponents={feedbackComponents}
           list={rickAndMortyCharacters}
-          isLoading={Boolean(
-            rickAndMortyLoaders[rickAndMortyLoadersKeys.getAll]
-          )}
+          isLoading={Boolean(rickAndMortyLoaders[rickAndMortyLoadersKeys.getAll])}
           error={rickAndMortyErrors[rickAndMortyErrorsKeys.getAll]}
           handleAddToCart={handleAddToCart}
           productComponents={productComponents}
