@@ -2,22 +2,27 @@ import React, { createContext, useState } from "react";
 
 export const FeedbackContext = createContext();
 
-const portal = document.getElementById("portal");
-
-export default function FeedbackProvider(props) {
-  const { handlersBuilder, components, useCases, domains, children } = props;
+export function FeedbackProvider(props) {
+  const {
+    handlersBuilder,
+    components,
+    useCases,
+    children,
+    providerMetadata,
+  } = props;
 
   const [textModalContent, setTextModalContent] = useState("");
+
+  const { portal } = providerMetadata;
 
   const handlers = handlersBuilder({
     stateSetters: {
       setTextModalContent,
     },
     useCases,
-    domains,
   });
 
-  const { handleCloseTextModal } = handlers
+  const { handleCloseTextModal } = handlers;
 
   const { TextModal } = components;
 
@@ -28,18 +33,18 @@ export default function FeedbackProvider(props) {
       textModalContent,
     },
     metadata: {
-        portal
-    }
+      portal,
+    },
   };
 
   return (
     <FeedbackContext.Provider value={value}>
       {children}
       <TextModal
-      open={Boolean(textModalContent)}
-      text={textModalContent}
-      portal={portal}
-      onClose={handleCloseTextModal}
+        open={Boolean(textModalContent)}
+        text={textModalContent}
+        portal={portal}
+        onClose={handleCloseTextModal}
       />
     </FeedbackContext.Provider>
   );

@@ -1,9 +1,10 @@
-import * as components from "./components";
-import FeedbackProvider, { FeedbackContext } from "./adapters/FeedbackProvider";
-import handlersBuilder from "./handlers/feedbackHandlers";
+import { useContext } from "react";
 import { withDomainBuilder } from "hocs";
 import utils from "utils";
-import { useContext } from "react";
+
+import * as components from "./components";
+import { FeedbackProvider, FeedbackContext } from "./adapters";
+import handlersBuilder from "./handlers";
 
 export default withDomainBuilder({
   utils,
@@ -14,4 +15,7 @@ export default withDomainBuilder({
   handlersBuilder,
   useContext: useContext,
   components,
+  providerMetadata: {
+    portal: document.getElementById("portal"),
+  },
 });

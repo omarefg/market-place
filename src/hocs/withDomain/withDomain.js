@@ -13,6 +13,7 @@ export function withDomainBuilder(params) {
     handlersBuilder,
     useContext,
     components,
+    providerMetadata
   } = params;
 
   return function withDomain(Component) {
@@ -22,7 +23,8 @@ export function withDomainBuilder(params) {
         [domainAdapterPropName]: () => useContext(context),
       };
 
-      const providerProps = {
+      const finalProviderProps = {
+        providerMetadata,
         useCases,
         handlersBuilder,
         components,
@@ -30,7 +32,7 @@ export function withDomainBuilder(params) {
       };
 
       return (
-        <Provider {...providerProps}>
+        <Provider {...finalProviderProps}>
           <Component {...childProps} />
         </Provider>
       );

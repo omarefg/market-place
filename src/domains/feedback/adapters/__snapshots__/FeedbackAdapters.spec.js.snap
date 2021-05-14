@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/feedback/adapters/FeedbackProvider Given a valid call it must render without crashing 1`] = `
+<div>
+  <div />
+  <div />
+</div>
+`;

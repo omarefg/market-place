@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/feedback/components/ErrorDomain Given a valid call it must render without crashing 1`] = `
+<div>
+  <div>
+    <p
+      data-testid="ErrorComponent_title"
+    >
+      ErrorTest
+    </p>
+    <button
+      data-testid="ErrorComponent_retryButton"
+    >
+      Retry
+    </button>
+  </div>
+</div>
+`;

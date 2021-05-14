@@ -1,4 +1,4 @@
-function handleSetTextModalMessageBuilder(params) {
+export function handleSetTextModalMessageBuilder(params) {
   const {
     stateSetters: { setTextModalContent },
   } = params;
@@ -8,19 +8,12 @@ function handleSetTextModalMessageBuilder(params) {
   };
 }
 
-function handleCloseTextModalBuilder(params) {
+export function handleCloseTextModalBuilder(params) {
   const {
     stateSetters: { setTextModalContent },
   } = params;
 
   return function handleCloseTextModal() {
     setTextModalContent("");
-  };
-}
-
-export default function shoppingCartHandlersBuilder(params) {
-  return {
-    handleSetTextModalMessage: handleSetTextModalMessageBuilder(params),
-    handleCloseTextModal: handleCloseTextModalBuilder(params),
   };
 }

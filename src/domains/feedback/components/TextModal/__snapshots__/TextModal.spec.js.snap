@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/feedback/components/TextModal Given a valid call it must render without crashing 1`] = `<div />`;

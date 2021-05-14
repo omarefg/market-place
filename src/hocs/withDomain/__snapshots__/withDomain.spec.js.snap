@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@HOCS/withDomain Given valid params it must render without crashing 1`] = `
+<div>
+  <div>
+    <div />
+  </div>
+</div>
+`;

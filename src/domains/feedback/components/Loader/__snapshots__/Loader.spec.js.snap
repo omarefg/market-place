@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/feedback/components/Loader Given a valid call it must render without crashing 1`] = `
+<div>
+  <p
+    data-testid="Loader_title"
+  >
+    Loading...
+  </p>
+</div>
+`;
