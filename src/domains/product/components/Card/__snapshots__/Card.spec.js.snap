@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/product/components/Card Given a valid call it must render without crashing 1`] = `
+<div>
+  <figure
+    class="root"
+  >
+    <img
+      alt="altMock"
+      class="cardImg"
+      src="imageMock"
+    />
+    <figcaption
+      class="caption"
+    >
+      captionMock
+    </figcaption>
+    <button
+      data-testid="Card__addButton"
+    >
+      Add to cart
+    </button>
+  </figure>
+</div>
+`;

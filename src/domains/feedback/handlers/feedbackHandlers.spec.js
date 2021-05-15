@@ -4,6 +4,10 @@ import {
 } from "./feedbackHandlers";
 
 describe("@domains/feedback/handlers", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe("handleSetTextModalMessage", () => {
     it("Given valid params it must execute the setter call with the passed arguments", () => {
       // Arrange
@@ -17,9 +21,7 @@ describe("@domains/feedback/handlers", () => {
       handleSetTextModalMessage(messageMock);
       // Assert
       expect(params.stateSetters.setTextModalContent).toBeCalledTimes(1);
-      expect(params.stateSetters.setTextModalContent).toBeCalledWith(
-        messageMock
-      );
+      expect(params.stateSetters.setTextModalContent).toBeCalledWith(messageMock);
     });
   });
 

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/product/components/CardsContainer Given a valid call it must render without crashing 1`] = `
+<div>
+  <h2
+    data-testid="CardsContainer__title"
+  >
+    titleMock
+  </h2>
+  <div
+    class="cardsContainer"
+  >
+    <div
+      data-testid="CardsContainer__children"
+    />
+  </div>
+</div>
+`;

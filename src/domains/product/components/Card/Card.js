@@ -12,7 +12,7 @@ export function Card(props) {
     <figure className={classes.root}>
       <img className={classes.cardImg} src={img} alt={alt} />
       <figcaption className={classes.caption}>{caption}</figcaption>
-      <button onClick={handleOnAddToCart}>Add to cart</button>
+      <button onClick={handleOnAddToCart} data-testid="Card__addButton">Add to cart</button>
     </figure>
   );
 }

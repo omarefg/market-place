@@ -3,6 +3,7 @@ import { Footer } from "./Footer";
 
 describe("@domains/layout/components/Footer", () => {
   let wrapper, defaultProps;
+
   beforeEach(() => {
     defaultProps = {
       children: <div data-testid="Footer_children" />,
@@ -12,6 +13,7 @@ describe("@domains/layout/components/Footer", () => {
       return render(<Footer {...finalProps} />);
     };
   });
+
   afterEach(() => {});
   it("Given a valid call it must render without crashing", () => {
     // Arrange

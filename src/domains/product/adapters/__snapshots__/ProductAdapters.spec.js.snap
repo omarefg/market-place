@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/product/adapters/ProductProvider Given a valid call it must render withot crashing 1`] = `
+<div>
+  <div
+    data-testid="ProductAdapter__children"
+  />
+</div>
+`;
