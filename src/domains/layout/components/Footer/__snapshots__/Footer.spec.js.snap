@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@domains/layout/components/Footer Given a valid call it must render without crashing 1`] = `
+<div>
+  <footer
+    class="footer"
+    data-testid="Footer_root"
+  >
+    <div
+      data-testid="Footer_children"
+    />
+  </footer>
+</div>
+`;

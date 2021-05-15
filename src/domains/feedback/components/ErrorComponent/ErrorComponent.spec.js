@@ -2,17 +2,25 @@ import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 import { ErrorComponent } from "./ErrorComponent";
 
-const defaultProps = {
-  error: "ErrorTest",
-  retry: jest.fn(),
-};
-
-const wrapper = (props = {}) => {
-  const finalProps = { ...defaultProps, ...props };
-  return render(<ErrorComponent {...finalProps} />);
-};
-
 describe("@domains/feedback/components/ErrorDomain", () => {
+  let defaultProps, wrapper;
+
+  beforeEach(() => {
+    defaultProps = {
+      error: "ErrorTest",
+      retry: jest.fn(),
+    };
+
+    wrapper = (props = {}) => {
+      const finalProps = { ...defaultProps, ...props };
+      return render(<ErrorComponent {...finalProps} />);
+    };
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Given a valid call it must render without crashing", () => {
     // Arrange
     const { container } = wrapper();

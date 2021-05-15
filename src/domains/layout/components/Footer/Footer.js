@@ -3,5 +3,9 @@ import classes from "./Footer.module.css";
 
 export function Footer(props) {
   const { children } = props;
-  return <footer className={classes.footer}>{children}</footer>;
+  return (
+    <footer data-testid="Footer_root" className={classes.footer}>
+      {children}
+    </footer>
+  );
 }

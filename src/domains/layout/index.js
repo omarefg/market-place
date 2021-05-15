@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { withDomainBuilder } from "hocs";
-import LayoutProvider, { LayoutContext } from "./adapters/LayoutProvider";
+import { LayoutProvider, LayoutContext } from "./adapters";
 import * as components from "./components";
 import utils from "utils";
 

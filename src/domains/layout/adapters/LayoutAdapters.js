@@ -2,7 +2,7 @@ import React, { createContext } from "react";
 
 export const LayoutContext = createContext();
 
-export default function LayoutProvider(props) {
+export function LayoutProvider(props) {
   const {
     components,
     children,

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { withDomainBuilder } from "hocs";
 import utils from "utils";
-import ProductProvider, { ProductContext } from "./adapters/ProductProvider";
+import { ProductProvider, ProductContext } from "./adapters";
 import * as components from "./components";
 
 export default withDomainBuilder({

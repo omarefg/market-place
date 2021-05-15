@@ -2,19 +2,27 @@ import React from "react";
 import { fireEvent, render, within } from "@testing-library/react";
 import { TextModal } from "./TextModal";
 
-const defaultProps = {
-  open: false,
-  text: "TextMock",
-  portal: document.createElement("div"),
-  onClose: jest.fn(),
-};
-
-const wrapper = (props = {}) => {
-  const finalProps = { ...defaultProps, ...props };
-  return render(<TextModal {...finalProps} />);
-};
-
 describe("@domains/feedback/components/TextModal", () => {
+  let defaultProps, wrapper;
+
+  beforeEach(() => {
+    defaultProps = {
+      open: false,
+      text: "TextMock",
+      portal: document.createElement("div"),
+      onClose: jest.fn(),
+    };
+
+    wrapper = (props = {}) => {
+      const finalProps = { ...defaultProps, ...props };
+      return render(<TextModal {...finalProps} />);
+    };
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Given a valid call it must render without crashing", () => {
     // Arrange
     const { container } = wrapper();

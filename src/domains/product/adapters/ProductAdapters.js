@@ -2,7 +2,7 @@ import React, { createContext } from "react";
 
 export const ProductContext = createContext();
 
-export default function ProductProvider(props) {
+export function ProductProvider(props) {
   const { components, children } = props;
 
   const value = {
