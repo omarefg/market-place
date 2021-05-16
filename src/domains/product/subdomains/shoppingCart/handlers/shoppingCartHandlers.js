@@ -1,4 +1,4 @@
-function handleBuyClickBuilder(params) {
+export function handleBuyClickBuilder(params) {
   const {
     stateSetters: { setLoaders, setErrors, setCart },
     useCases: { postBuy },
@@ -33,18 +33,11 @@ function handleBuyClickBuilder(params) {
   };
 }
 
-function handleAddToCartBuilder(params) {
+export function handleAddToCartBuilder(params) {
   const {
     stateSetters: { setCart }
   } = params;
   return function handleAddToCart(item) {
     setCart(prevState => [...prevState, item])
   }
-}
-
-export default function shoppingCartHandlersBuilder(params) {
-  return {
-    handleBuyClick: handleBuyClickBuilder(params),
-    handleAddToCart: handleAddToCartBuilder(params),
-  };
 }

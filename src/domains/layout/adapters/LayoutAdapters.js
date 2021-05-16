@@ -17,6 +17,7 @@ export function LayoutProvider(props) {
     metadata: {
       loadersKeys: shoppingCartLoadersKeys,
       errorsKeys: shoppingCartErrorsKeys,
+      assets: { shoppingCart },
     },
   } = useShoppingCart();
 
@@ -32,8 +33,11 @@ export function LayoutProvider(props) {
           total={cart.length}
           disabled={!cart.length}
           error={shoppingCartErrors[shoppingCartErrorsKeys.postBuy]}
-          isLoading={Boolean(shoppingCartLoaders[shoppingCartLoadersKeys.postBuy])}
+          isLoading={Boolean(
+            shoppingCartLoaders[shoppingCartLoadersKeys.postBuy]
+          )}
           feedbackComponents={feedbackComponents}
+          cartIcon={shoppingCart}
         />
       </Footer>
     </LayoutContext.Provider>

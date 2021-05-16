@@ -1,10 +1,17 @@
 import React from "react";
-import cartIcon from "../../assets/shoppingCart.svg";
 import classes from "./BuyButton.module.css";
 
 export function BuyButton(props) {
-  const { total, onClick, disabled, isLoading, error, feedbackComponents } = props
-  const { Loader, ErrorComponent } = feedbackComponents
+  const {
+    total,
+    onClick,
+    disabled,
+    isLoading,
+    error,
+    feedbackComponents,
+    cartIcon,
+  } = props;
+  const { Loader, ErrorComponent } = feedbackComponents;
 
   if (isLoading) {
     return <Loader />;

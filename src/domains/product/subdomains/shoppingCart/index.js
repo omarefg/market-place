@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useContext } from "react";
-import ShoppingCartProvider, { ShoppingCartContext } from "./adapters/ShoppingCartProvider";
-import * as components from "./components";
-import handlersBuilder from "./handlers/shoppingCartHandlers";
-import useCasesBuilder from "./useCases/shoppingCartUseCases";
 import * as drivers from "drivers";
 import { withDomainBuilder } from "hocs";
 import utils from "utils";
+import { ShoppingCartProvider, ShoppingCartContext } from "./adapters";
+import * as components from "./components";
+import handlersBuilder from "./handlers";
+import useCasesBuilder from "./useCases";
+import assets from "./assets";
 
 export default withDomainBuilder({
   Provider: ShoppingCartProvider,
@@ -17,5 +18,6 @@ export default withDomainBuilder({
   domainAdapterPropName: "useShoppingCart",
   useCases: useCasesBuilder({ drivers }),
   handlersBuilder,
-  components
+  components,
+  providerMetadata: { assets },
 });

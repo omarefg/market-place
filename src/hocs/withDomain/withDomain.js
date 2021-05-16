@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export function withDomainBuilder(params) {
   const {
@@ -13,7 +13,7 @@ export function withDomainBuilder(params) {
     handlersBuilder,
     useContext,
     components,
-    providerMetadata
+    providerMetadata,
   } = params;
 
   return function withDomain(Component) {

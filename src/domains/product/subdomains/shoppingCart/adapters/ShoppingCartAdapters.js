@@ -8,16 +8,24 @@ const loadersKeys = {
 
 const errorsKeys = {
   postBuy: "postBuy",
-}
+};
 
-export default function ShoppingCartProvider(props) {
-  const { handlersBuilder, components, useCases, children, higherProps } = props;
+export function ShoppingCartProvider(props) {
+  const {
+    handlersBuilder,
+    components,
+    useCases,
+    children,
+    higherProps,
+    providerMetadata,
+  } = props;
 
   const [cart, setCart] = useState([]);
   const [loaders, setLoaders] = useState({});
   const [errors, setErrors] = useState({});
 
   const { useFeedback } = higherProps;
+  const { assets } = providerMetadata;
 
   const value = {
     handlers: handlersBuilder({
@@ -31,7 +39,7 @@ export default function ShoppingCartProvider(props) {
         feedback: useFeedback(),
       },
       loadersKeys,
-      errorsKeys
+      errorsKeys,
     }),
     components,
     state: {
@@ -41,7 +49,8 @@ export default function ShoppingCartProvider(props) {
     },
     metadata: {
       loadersKeys,
-      errorsKeys
+      errorsKeys,
+      assets
     },
   };
 
